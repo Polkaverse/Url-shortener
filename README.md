@@ -46,3 +46,10 @@ Run the docker image
 ```
 docker container run -d -p 3000:3000 pankajchaudhary/assignment:0.0.1.RELEASE
 ```
+
+
+### How to run Test
+
+```
+npx jest
+```

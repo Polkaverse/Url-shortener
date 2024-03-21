@@ -53,8 +53,8 @@ app.post("/shorten", (req, res) => {
   domainCounts[domain] = (domainCounts[domain] || 0) + 1;
 
   // Log the URL-shortcode mapping
-  console.log("urlToShortcode: ", urlToShortcode);
-  console.log("shortcodeToUrl: ", shortcodeToUrl);
+  // console.log("urlToShortcode:", urlToShortcode);
+  // console.log("shortcodeToUrl:", shortcodeToUrl);
 
   // Return the shortcode in the response
   res.json({ shortcode });
@@ -97,6 +97,9 @@ app.get("/:shortcode", (req, res) => {
 });
 
 // Start the server and listen for incoming connections
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// Export the server for testing
+module.exports = server;
